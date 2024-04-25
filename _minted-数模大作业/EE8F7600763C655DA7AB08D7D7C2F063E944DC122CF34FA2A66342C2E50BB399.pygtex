@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{function}\PYG{+w}{ }points\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nf}{angleAdjust}\PYG{p}{(}points,id,O\PYG{p}{)}
+\PYG{c}{\PYGZpc{}ANGLEADJUST 对Points中指定的id的点进行角度矫正}
+
+\PYG{c}{\PYGZpc{} 顺时针方向下一个点}
+\PYG{k}{if}\PYG{+w}{ }\PYG{n}{id}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n+nb}{length}\PYG{p}{(}\PYG{n}{points}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n}{left}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{k}{else}
+\PYG{+w}{    }\PYG{n}{left}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{id}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{k}{end}
+\PYG{c}{\PYGZpc{} 顺时针方向上一个点}
+\PYG{k}{if}\PYG{+w}{ }\PYG{n}{id}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mi}{1}
+\PYG{+w}{    }\PYG{n}{right}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{length}\PYG{p}{(}\PYG{n}{points}\PYG{p}{);}
+\PYG{k}{else}
+\PYG{+w}{    }\PYG{n}{right}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{id}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{k}{end}
+
+\PYG{n}{target}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n+nb}{pi}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n+nb}{pi}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n+nb}{length}\PYG{p}{(}\PYG{n}{points}\PYG{p}{))}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{;}
+
+\PYG{n}{points}\PYG{p}{(}\PYG{n}{id}\PYG{p}{,:)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{moveToCertainAngle}\PYG{p}{(}\PYG{n}{points}\PYG{p}{(}\PYG{n}{left}\PYG{p}{,:),}\PYG{+w}{ }\PYG{n}{points}\PYG{p}{(}\PYG{n}{right}\PYG{p}{,:),}\PYG{+w}{ }\PYG{n}{O}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{points}\PYG{p}{(}\PYG{n}{id}\PYG{p}{,:),}\PYG{+w}{ }\PYG{n}{target}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{target}\PYG{p}{);}
+
+\PYG{k}{end}
+\end{Verbatim}

@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{function}\PYG{+w}{ }angle\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nf}{calculateAngle}\PYG{p}{(}N1,N2,O\PYG{p}{)}
+\PYG{c}{\PYGZpc{}CALCULATEANGLE 计算角N1ON2}
+\PYG{c}{\PYGZpc{}   其中O为角的顶点，N1、N2和O用二维行向量表示笛卡尔坐标系下的坐标}
+\PYG{c}{\PYGZpc{}   返回角度的单位为弧度}
+\PYG{n}{ON1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{N1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{O}\PYG{p}{;}
+\PYG{n}{ON2}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{N2}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{O}\PYG{p}{;}
+\PYG{n+nb}{angle}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{atan2}\PYG{p}{(}\PYG{+w}{ }\PYG{k}{...}
+\PYG{+w}{    }\PYG{n+nb}{norm}\PYG{p}{(}\PYG{n+nb}{cross}\PYG{p}{([}\PYG{n}{ON1}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{],[}\PYG{n}{ON2}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{])),}\PYG{+w}{ }\PYG{k}{...}
+\PYG{+w}{    }\PYG{n+nb}{dot}\PYG{p}{(}\PYG{n}{ON1}\PYG{p}{,}\PYG{n}{ON2}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{...}
+\PYG{+w}{    }\PYG{p}{);}
+\PYG{k}{end}
+\end{Verbatim}

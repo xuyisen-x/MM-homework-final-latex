@@ -1,0 +1,60 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{clearvars}
+
+\PYG{c}{\PYGZpc{} 初始化}
+\PYG{n}{FY00pc}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{];}\PYG{+w}{ }\PYG{n}{FY00xy}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{];}
+\PYG{n}{FYpc\PYGZus{}g}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{l+m+mi}{98}\PYG{p}{,}\PYG{l+m+mf}{40.10}\PYG{p}{;}\PYG{l+m+mi}{112}\PYG{p}{,}\PYG{l+m+mf}{80.21}\PYG{p}{;}\PYG{l+m+mi}{105}\PYG{p}{,}\PYG{l+m+mf}{119.75}\PYG{p}{;}\PYG{l+m+mi}{98}\PYG{p}{,}\PYG{l+m+mf}{159.86}\PYG{p}{;}
+\PYG{+w}{    }\PYG{l+m+mi}{112}\PYG{p}{,}\PYG{l+m+mf}{199.96}\PYG{p}{;}\PYG{l+m+mi}{105}\PYG{p}{,}\PYG{l+m+mf}{240.07}\PYG{p}{;}\PYG{l+m+mi}{98}\PYG{p}{,}\PYG{l+m+mf}{280.17}\PYG{p}{;}\PYG{l+m+mi}{112}\PYG{p}{,}\PYG{l+m+mf}{320.28}\PYG{p}{];}
+\PYG{n}{FYpc\PYGZus{}t}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{l+m+mi}{40}\PYG{p}{;}\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{l+m+mi}{80}\PYG{p}{;}\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{l+m+mi}{120}\PYG{p}{;}\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{l+m+mi}{160}\PYG{p}{;}\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{l+m+mi}{200}\PYG{p}{;}
+\PYG{+w}{    }\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{l+m+mi}{240}\PYG{p}{;}\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{l+m+mi}{280}\PYG{p}{;}\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{l+m+mi}{320}\PYG{p}{];}
+\PYG{n}{FYxy\PYGZus{}t}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{l+m+mi}{9}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{);}\PYG{n}{FYxy\PYGZus{}g}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{l+m+mi}{9}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{);}\PYG{n}{FYxy}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{l+m+mi}{9}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{);}
+\PYG{p}{[}\PYG{n}{FYxy\PYGZus{}g}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{),}\PYG{n}{FYxy\PYGZus{}g}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{pol2cart}\PYG{p}{(}\PYG{n+nb}{deg2rad}\PYG{p}{(}\PYG{n}{FYpc\PYGZus{}g}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)),}\PYG{n}{FYpc\PYGZus{}g}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{));}
+\PYG{p}{[}\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{),}\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{pol2cart}\PYG{p}{(}\PYG{n+nb}{deg2rad}\PYG{p}{(}\PYG{n}{FYpc\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)),}\PYG{n}{FYpc\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{));}
+
+\PYG{n}{times}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYG{p}{;}
+
+\PYG{c}{\PYGZpc{} 进行半径矫正组}
+\PYG{p}{[}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{),}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{pol2cart}\PYG{p}{(}\PYG{n+nb}{deg2rad}\PYG{p}{(}\PYG{n}{FYpc\PYGZus{}g}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)),}\PYG{n}{FYpc\PYGZus{}g}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{));}
+\PYG{n}{L1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{times}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{n}{L1}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sum}\PYG{p}{((}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{))}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{))}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{);}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{times}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mi}{1}
+\PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{:}\PYG{l+m+mi}{9}
+\PYG{+w}{            }\PYG{n}{FYxy}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{radiusAdjust}\PYG{p}{(}\PYG{n}{FYxy}\PYG{p}{,}\PYG{n+nb}{i}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{FY00xy}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k}{end}
+\PYG{+w}{        }\PYG{p}{[}\PYG{n}{tempTheta}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{tempRho}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{cart2pol}\PYG{p}{(}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{),}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{));}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{:}\PYG{l+m+mi}{9}
+\PYG{+w}{        }\PYG{n}{FYxy}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{angleAdjust}\PYG{p}{(}\PYG{n}{FYxy}\PYG{p}{,}\PYG{n+nb}{i}\PYG{p}{,}\PYG{n}{FY00xy}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{n}{L1}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{k}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sum}\PYG{p}{((}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{))}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{))}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{);}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZpc{} 不进行半径矫正组}
+\PYG{p}{[}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{),}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{pol2cart}\PYG{p}{(}\PYG{n+nb}{deg2rad}\PYG{p}{(}\PYG{n}{FYpc\PYGZus{}g}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)),}\PYG{n}{FYpc\PYGZus{}g}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{));}
+\PYG{n}{L2}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{times}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{n}{L2}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sum}\PYG{p}{((}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{))}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{))}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{);}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{times}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{:}\PYG{l+m+mi}{9}
+\PYG{+w}{        }\PYG{n}{FYxy}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{angleAdjust}\PYG{p}{(}\PYG{n}{FYxy}\PYG{p}{,}\PYG{n+nb}{i}\PYG{p}{,}\PYG{n}{FY00xy}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{n}{L2}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{k}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sum}\PYG{p}{((}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{))}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{))}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{);}
+\PYG{k}{end}
+
+\PYG{n}{f1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{figure}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{n+nb}{polarplot}\PYG{p}{(}\PYG{n+nb}{deg2rad}\PYG{p}{(}\PYG{n}{FYpc\PYGZus{}t}\PYG{p}{([}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{k}{end}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{],}\PYG{l+m+mi}{2}\PYG{p}{)),}\PYG{+w}{ }\PYG{n}{FYpc\PYGZus{}t}\PYG{p}{([}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{k}{end}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{],}\PYG{l+m+mi}{1}\PYG{p}{),}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}\PYGZhy{}o\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+\PYG{n+nb}{hold}\PYG{+w}{ }\PYG{n}{on}
+\PYG{n+nb}{polarplot}\PYG{p}{(}\PYG{n+nb}{deg2rad}\PYG{p}{(}\PYG{n}{FYpc\PYGZus{}g}\PYG{p}{([}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{k}{end}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{],}\PYG{l+m+mi}{2}\PYG{p}{)),}\PYG{+w}{ }\PYG{n}{FYpc\PYGZus{}g}\PYG{p}{([}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{k}{end}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{],}\PYG{l+m+mi}{1}\PYG{p}{),}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}\PYGZhy{}\PYGZca{}\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+\PYG{n+nb}{polarplot}\PYG{p}{(}\PYG{n}{tempTheta}\PYG{p}{([}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{k}{end}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]),}\PYG{+w}{ }\PYG{n}{tempRho}\PYG{p}{([}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{k}{end}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]),}\PYG{l+s}{\PYGZsq{}\PYGZhy{}\PYGZhy{}*\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+\PYG{n+nb}{legend}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}目标位置\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}起始位置\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}半径矫正后位置\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Location}\PYG{p}{=}\PYG{l+s}{\PYGZdq{}southoutside\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{rticks}\PYG{p}{([])}
+\PYG{n+nb}{thetaticks}\PYG{p}{([}\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{l+m+mi}{40}\PYG{+w}{ }\PYG{l+m+mi}{80}\PYG{+w}{ }\PYG{l+m+mi}{120}\PYG{+w}{ }\PYG{l+m+mi}{160}\PYG{+w}{ }\PYG{l+m+mi}{200}\PYG{+w}{ }\PYG{l+m+mi}{240}\PYG{+w}{ }\PYG{l+m+mi}{280}\PYG{+w}{ }\PYG{l+m+mi}{320}\PYG{p}{])}
+
+\PYG{n}{f2}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{figure}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{);}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{:}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{times}\PYG{p}{,}\PYG{n}{L2}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}\PYGZhy{}o\PYGZsq{}}\PYG{p}{,}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+\PYG{n+nb}{hold}\PYG{+w}{ }\PYG{n}{on}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{:}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{times}\PYG{p}{,}\PYG{n}{L1}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}\PYGZhy{}\PYGZca{}\PYGZsq{}}\PYG{p}{,}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+\PYG{n+nb}{xlabel}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}迭代次数\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{ylabel}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}损失函数L\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{legend}\PYG{p}{([}\PYG{l+s}{\PYGZdq{}不进行半径矫正\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}进行半径矫正\PYGZdq{}}\PYG{p}{])}
+\end{Verbatim}

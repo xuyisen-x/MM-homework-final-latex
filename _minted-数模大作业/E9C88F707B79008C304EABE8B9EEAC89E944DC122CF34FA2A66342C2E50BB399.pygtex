@@ -1,0 +1,71 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{clearvars}
+
+\PYG{n}{sideLength}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{50}\PYG{p}{;}\PYG{+w}{    }\PYG{c}{\PYGZpc{} 等边三角形边长}
+\PYG{n}{times}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} 标准位置}
+\PYG{n}{FYxy\PYGZus{}t}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{),}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{;}\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{;}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{o}{\PYGZhy{}}\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{;}\PYG{o}{\PYGZhy{}}\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{;}\PYG{o}{\PYGZhy{}}\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{;}\PYG{o}{\PYGZhy{}}\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{;}
+\PYG{+w}{    }\PYG{o}{\PYGZhy{}}\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{),}\PYG{l+m+mi}{2}\PYG{p}{;}\PYG{o}{\PYGZhy{}}\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{),}\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{o}{\PYGZhy{}}\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{),}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{o}{\PYGZhy{}}\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{),}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{o}{\PYGZhy{}}\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{),}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{sideLength}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} 初始位置，在标准位置上添加偏差，FY01和FY05作为基准，保持不变}
+\PYG{n}{FYxy\PYGZus{}g}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{;}
+\PYG{n+nb}{rng}\PYG{p}{(}\PYG{l+m+mi}{20240415}\PYG{p}{)}\PYG{+w}{   }\PYG{c}{\PYGZpc{}指定随机数种子，保证可重复性}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{15}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{o}{==}\PYG{l+m+mi}{5}
+\PYG{+w}{        }\PYG{k}{continue}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{n}{eRho}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{unifrnd}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{sideLength}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{eTheta}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{unifrnd}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n+nb}{pi}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{FYxy\PYGZus{}g}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}g}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{eRho}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n+nb}{cos}\PYG{p}{(}\PYG{n}{eTheta}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{FYxy\PYGZus{}g}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}g}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{eRho}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n+nb}{sin}\PYG{p}{(}\PYG{n}{eTheta}\PYG{p}{);}
+\PYG{k}{end}
+\PYG{n}{FYxy}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}g}\PYG{p}{;}
+
+\PYG{c}{\PYGZpc{} 调整FY01，FY07和FY10使其在以FY05为圆心的圆上}
+\PYG{n}{c1710}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{FYxy}\PYG{p}{([}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{7}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{],:);}
+\PYG{n}{L}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{times}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{n}{L}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sum}\PYG{p}{((}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{))}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{))}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{);}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{times}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mi}{1}
+\PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{:}\PYG{l+m+mi}{3}
+\PYG{+w}{            }\PYG{n}{c1710}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{radiusAdjust}\PYG{p}{(}\PYG{n}{c1710}\PYG{p}{,}\PYG{n+nb}{i}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{,:));}
+\PYG{+w}{        }\PYG{k}{end}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{:}\PYG{l+m+mi}{3}
+\PYG{+w}{        }\PYG{n}{c1710}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{angleAdjust}\PYG{p}{(}\PYG{n}{c1710}\PYG{p}{,}\PYG{n+nb}{i}\PYG{p}{,}\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{,:));}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{n}{FYxy}\PYG{p}{([}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{7}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{],:)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{c1710}\PYG{p}{;}
+\PYG{+w}{    }\PYG{c}{\PYGZpc{} 调整无人机所用函数}
+\PYG{+w}{    }\PYG{n}{fmid}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{@(}\PYG{n}{x}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{moveToCertainAngle}\PYG{p}{(}\PYG{+w}{ }\PYG{k}{...}
+\PYG{+w}{        }\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{7}\PYG{p}{,:),}\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,:),}\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{,:),}\PYG{n}{FYxy}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,:),}\PYG{+w}{ }\PYG{k}{...}
+\PYG{+w}{        }\PYG{n}{calculateAngle}\PYG{p}{(}\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(}\PYG{l+m+mi}{7}\PYG{p}{,:),}\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{,:),}\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,:)),}\PYG{+w}{ }\PYG{k}{...}
+\PYG{+w}{        }\PYG{n}{calculateAngle}\PYG{p}{(}\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,:),}\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{,:),}\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,:)));}
+\PYG{+w}{    }\PYG{c}{\PYGZpc{} 依次根据角度调整剩下的无人机}
+\PYG{+w}{    }\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,:)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fmid}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,:)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fmid}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{,:)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fmid}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{6}\PYG{p}{,:)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fmid}\PYG{p}{(}\PYG{l+m+mi}{6}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{8}\PYG{p}{,:)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fmid}\PYG{p}{(}\PYG{l+m+mi}{8}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{9}\PYG{p}{,:)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fmid}\PYG{p}{(}\PYG{l+m+mi}{9}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{11}\PYG{p}{,:)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fmid}\PYG{p}{(}\PYG{l+m+mi}{11}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{12}\PYG{p}{,:)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fmid}\PYG{p}{(}\PYG{l+m+mi}{12}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{13}\PYG{p}{,:)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fmid}\PYG{p}{(}\PYG{l+m+mi}{13}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{14}\PYG{p}{,:)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fmid}\PYG{p}{(}\PYG{l+m+mi}{14}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{FYxy}\PYG{p}{(}\PYG{l+m+mi}{15}\PYG{p}{,:)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fmid}\PYG{p}{(}\PYG{l+m+mi}{15}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{L}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{k}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sum}\PYG{p}{((}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{))}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{))}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{);}
+\PYG{k}{end}
+
+\PYG{n}{f1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{figure}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{),}\PYG{n}{FYxy\PYGZus{}t}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{),}\PYG{l+s}{\PYGZsq{}o\PYGZsq{}}\PYG{p}{,}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+\PYG{n+nb}{hold}\PYG{+w}{ }\PYG{n}{on}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{FYxy\PYGZus{}g}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{),}\PYG{n}{FYxy\PYGZus{}g}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{),}\PYG{l+s}{\PYGZsq{}\PYGZca{}\PYGZsq{}}\PYG{p}{,}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{),}\PYG{n}{FYxy}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{),}\PYG{l+s}{\PYGZsq{}*\PYGZsq{}}\PYG{p}{,}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+\PYG{n+nb}{axis}\PYG{+w}{ }\PYG{n}{equal}
+\PYG{n+nb}{axis}\PYG{p}{([}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{105}\PYG{p}{,}\PYG{l+m+mi}{90}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{105}\PYG{p}{,}\PYG{l+m+mi}{105}\PYG{p}{])}
+\PYG{n+nb}{legend}\PYG{p}{([}\PYG{l+s}{\PYGZdq{}目标位置\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}调整前位置\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}调整后位置\PYGZdq{}}\PYG{p}{])}
+
+\PYG{n}{f2}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{figure}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{);}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{:}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{times}\PYG{p}{,}\PYG{n}{L}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}\PYGZhy{}o\PYGZsq{}}\PYG{p}{,}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+\PYG{n+nb}{xlabel}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}迭代次数\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{ylabel}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}损失函数L\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{function}\PYG{+w}{ }newR\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nf}{moveToCertainAngle}\PYG{p}{(}A,B,O,R,ARO,BRO\PYG{p}{)}
+\PYG{c}{\PYGZpc{}MOVETOCERTAINANGLE 将R移动到newR位置，使得角ARO与角BRO为特定值}
+\PYG{c}{\PYGZpc{}   A,B,O,R为用二维行向量表示笛卡尔坐标系下的坐标}
+\PYG{c}{\PYGZpc{}   ARO与BRO为指定角度，弧度制}
+\PYG{n}{fun}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{@(}\PYG{n}{x}\PYG{p}{)[}\PYG{n}{calculateAngle}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,}\PYG{n}{O}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{n}{ARO}\PYG{p}{,}\PYG{n}{calculateAngle}\PYG{p}{(}\PYG{n}{B}\PYG{p}{,}\PYG{n}{O}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{n}{BRO}\PYG{p}{];}
+\PYG{n}{opt}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{optimset}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Display\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}off\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}FunValCheck\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}on\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}TolFun\PYGZsq{}}\PYG{p}{,}\PYG{l+m+mf}{1e\PYGZhy{}9}\PYG{p}{);}
+\PYG{n}{newR}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fsolve}\PYG{p}{(}\PYG{n}{fun}\PYG{p}{,}\PYG{n}{R}\PYG{p}{,}\PYG{n}{opt}\PYG{p}{);}
+\PYG{k}{end}
+\end{Verbatim}
